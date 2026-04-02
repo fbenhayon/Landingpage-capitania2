@@ -1,11 +1,13 @@
-﻿// Production config for external landing + Beehiiv integration.
-// Update these values before publishing.
+// Production config for external landing + Beehiiv integration.
+// ✅ beehiivIframeSrc confirmed from Beehiiv embed code.
+// ⚠️ publicationUrl: update if your Beehiiv subdomain differs from 'capitania'.
+// ⚠️ ndaFormUrl: replace with your NDA/Data Room form URL (Typeform, Tally, etc.).
 const CONFIG = {
-  publicationUrl: "https://SEU-DOMINIO.beehiiv.com",
+  publicationUrl: "https://capitania.beehiiv.com",
   beehiivIframeSrc: "https://subscribe-forms.beehiiv.com/0b865016-1ecc-4a37-8ac8-958205fb638e",
   beehiivEmbedScriptSrc: "https://subscribe-forms.beehiiv.com/embed.js",
   beehiivAttributionScriptSrc: "https://subscribe-forms.beehiiv.com/attribution.js",
-  ndaFormUrl: "https://SEU-FORMULARIO-NDA.com",
+  ndaFormUrl: "mailto:bni.imoveis@hotmail.com",
   contactEmail: "bni.imoveis@hotmail.com",
 };
 
@@ -37,7 +39,6 @@ function initBeehiivBlock() {
   if (looksConfigured(publicationBase)) {
     fallbackLink.href = publicationBase + "/subscribe";
   } else if (looksConfigured(CONFIG.beehiivIframeSrc)) {
-    // Keep the CTA usable even before the public Beehiiv URL is available.
     fallbackLink.href = CONFIG.beehiivIframeSrc;
   } else {
     fallbackLink.href = "#";
@@ -74,7 +75,7 @@ function initSecondaryActions() {
   const ndaLink = document.getElementById("ndaLink");
   const contactEmail = document.getElementById("contactEmail");
 
-  if (looksConfigured(CONFIG.ndaFormUrl)) {
+  if (looksConfigured(CONFIG.ndaFormUrl) && !CONFIG.ndaFormUrl.startsWith("mailto:")) {
     ndaLink.href = CONFIG.ndaFormUrl;
   } else {
     ndaLink.href = "mailto:" + CONFIG.contactEmail;
