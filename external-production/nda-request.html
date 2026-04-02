@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitania Resort | NDA Request</title>
+    <meta
+      name="description"
+      content="Investor NDA and Data Room access request page for Capitania Resort."
+    />
+    <meta name="theme-color" content="#0d1b1e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="./index.html">Capitania Investor Desk</a>
+      <a class="top-cta" href="./index.html#subscribe">Back to Landing</a>
+    </header>
+
+    <main class="nda-main">
+      <section class="nda-intro">
+        <p class="eyebrow">Confidential Access</p>
+        <h1>Request NDA and Data Room Access</h1>
+        <p class="lead">
+          Share your investor profile and we will review the request for confidential materials.
+          This page generates a structured intake email so the commercial team can respond quickly.
+        </p>
+      </section>
+
+      <section class="nda-layout" aria-label="NDA qualification">
+        <article class="panel nda-panel">
+          <p class="eyebrow">Process</p>
+          <h2>What Happens Next</h2>
+          <p>
+            We use this intake to qualify interest before sending the NDA and staging Data Room
+            access.
+          </p>
+
+          <ul class="nda-checklist">
+            <li>
+              <strong>1. Qualification snapshot</strong>
+              We collect the essentials needed for legal and commercial screening.
+            </li>
+            <li>
+              <strong>2. NDA review</strong>
+              Approved contacts receive the next step for confidentiality execution.
+            </li>
+            <li>
+              <strong>3. Controlled disclosure</strong>
+              Data Room access can then be shared according to the transaction process.
+            </li>
+          </ul>
+
+          <div class="contact-strip">
+            <p>Prefer direct outreach?</p>
+            <p><a href="mailto:bni.imoveis@hotmail.com">bni.imoveis@hotmail.com</a></p>
+          </div>
+        </article>
+
+        <article class="panel nda-panel">
+          <p class="eyebrow">Investor Intake</p>
+          <h2>Send Your Request</h2>
+          <form id="ndaRequestForm" class="nda-form" novalidate>
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Full Name</span>
+                <input type="text" name="fullName" autocomplete="name" required />
+              </label>
+
+              <label class="form-field">
+                <span>Professional Email</span>
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+
+              <label class="form-field">
+                <span>Company / Fund</span>
+                <input type="text" name="company" autocomplete="organization" required />
+              </label>
+
+              <label class="form-field">
+                <span>Role / Title</span>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Managing Partner, CIO, Family Office Principal"
+                />
+              </label>
+
+              <label class="form-field">
+                <span>Phone / WhatsApp</span>
+                <input type="text" name="phone" autocomplete="tel" />
+              </label>
+
+              <label class="form-field">
+                <span>Country / Jurisdiction</span>
+                <input type="text" name="jurisdiction" placeholder="Brazil, USA, UAE, Portugal..." />
+              </label>
+
+              <label class="form-field">
+                <span>Investor Type</span>
+                <select name="investorType" required>
+                  <option value="">Select one</option>
+                  <option>Family Office</option>
+                  <option>Private Equity</option>
+                  <option>Hospitality Operator</option>
+                  <option>Strategic Investor</option>
+                  <option>Broker / Advisor</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label class="form-field">
+                <span>Capital Profile</span>
+                <select name="capitalProfile">
+                  <option value="">Select one</option>
+                  <option>Under R$25M</option>
+                  <option>R$25M - R$50M</option>
+                  <option>R$50M - R$100M</option>
+                  <option>Above R$100M</option>
+                </select>
+              </label>
+
+              <label class="form-field field-full">
+                <span>Investment Thesis / Notes</span>
+                <textarea
+                  name="notes"
+                  placeholder="Describe interest, mandate, target ticket, timeline, and any prior exposure to hospitality or resort assets."
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="consent-box">
+              <label>
+                <input type="checkbox" name="consent" required />
+                <span>
+                  I confirm that I am requesting confidential information for legitimate commercial
+                  evaluation and understand that Data Room access is subject to approval.
+                </span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-gold">Generate Request Email</button>
+              <button type="button" id="copyRequest" class="btn btn-ghost">Copy Request Text</button>
+            </div>
+
+            <p id="formStatus" class="status-inline" aria-live="polite"></p>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Capitania Resort NDA Intake</p>
+      <p>Direct support: bni.imoveis@hotmail.com</p>
+    </footer>
+
+    <script src="./nda-request.js"></script>
+  </body>
+</html>

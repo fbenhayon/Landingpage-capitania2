@@ -1,13 +1,13 @@
 // Production config for external landing + Beehiiv integration.
-// ✅ beehiivIframeSrc confirmed from Beehiiv embed code.
-// ⚠️ publicationUrl: update if your Beehiiv subdomain differs from 'capitania'.
-// ⚠️ ndaFormUrl: replace with your NDA/Data Room form URL (Typeform, Tally, etc.).
+// beehiivIframeSrc confirmed from Beehiiv embed code.
+// publicationUrl: update if your Beehiiv subdomain differs from 'capitania'.
+// ndaFormUrl: internal NDA intake page for Data Room requests.
 const CONFIG = {
   publicationUrl: "https://capitania.beehiiv.com",
   beehiivIframeSrc: "https://subscribe-forms.beehiiv.com/0b865016-1ecc-4a37-8ac8-958205fb638e",
   beehiivEmbedScriptSrc: "https://subscribe-forms.beehiiv.com/embed.js",
   beehiivAttributionScriptSrc: "https://subscribe-forms.beehiiv.com/attribution.js",
-  ndaFormUrl: "mailto:bni.imoveis@hotmail.com",
+  ndaFormUrl: "./nda-request.html",
   contactEmail: "bni.imoveis@hotmail.com",
 };
 
