@@ -1,0 +1,174 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitania Resort | Investor Landing</title>
+    <meta
+      name="description"
+      content="External production landing page for Capitania Resort investor outreach, integrated with Beehiiv subscribe flow."
+    />
+    <meta name="theme-color" content="#0d1b1e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#home">Capitania Investor Desk</a>
+      <a class="top-cta" href="#subscribe">Join Investor Updates</a>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Porto Seguro, Bahia</p>
+          <h1>
+            Trophy Hospitality Asset with
+            <span>Structured Upside</span>
+          </h1>
+          <p class="lead">
+            External production page designed for investor qualification and Beehiiv list growth,
+            without platform limitations from newsletter HTML blocks.
+          </p>
+          <div class="hero-actions">
+            <a href="#subscribe" class="btn btn-gold">Get Confidential Updates</a>
+            <a href="#highlights" class="btn btn-ghost">View Investment Case</a>
+          </div>
+          <ul class="metrics" aria-label="Key highlights">
+            <li>
+              <strong>500+</strong>
+              <span>Potential vacation ownership units</span>
+            </li>
+            <li>
+              <strong>Turnkey</strong>
+              <span>Operating structure with known asset history</span>
+            </li>
+            <li>
+              <strong>Blue Ocean</strong>
+              <span>Underpenetrated premium segment in Bahia</span>
+            </li>
+          </ul>
+        </div>
+
+        <figure class="hero-visual">
+          <img src="./assets/capa.jpg" alt="Capitania Resort main view" loading="eager" />
+        </figure>
+      </section>
+
+      <section class="highlights" id="highlights">
+        <header class="section-head">
+          <p class="eyebrow">Investment Thesis</p>
+          <h2>Six Practical Reasons Investors Engage</h2>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Prime Coastal Position</h3>
+            <p>Large-format hospitality footprint in one of Brazil's strongest leisure corridors.</p>
+          </article>
+          <article class="card">
+            <h3>Value-Add Orientation</h3>
+            <p>Clear room for repositioning, yield optimization, and brand strategy.</p>
+          </article>
+          <article class="card">
+            <h3>Alternative Revenue Layer</h3>
+            <p>Vacation ownership potential can diversify earnings beyond daily rates.</p>
+          </article>
+          <article class="card">
+            <h3>Risk Mitigation</h3>
+            <p>Known operational history reduces uncertainty versus greenfield development.</p>
+          </article>
+          <article class="card">
+            <h3>Institutional Readiness</h3>
+            <p>Transaction process structured around NDA and staged Data Room access.</p>
+          </article>
+          <article class="card">
+            <h3>Cross-Border Appeal</h3>
+            <p>Strong narrative for international investors seeking Brazil hospitality exposure.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="process" id="process">
+        <header class="section-head">
+          <p class="eyebrow">Qualification Flow</p>
+          <h2>Simple and Investor-Friendly</h2>
+        </header>
+
+        <ol class="steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h3>Subscribe via Beehiiv</h3>
+              <p>Capture investor lead with source attribution and segmentation.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3>NDA Request</h3>
+              <p>Route qualified contacts to your legal/commercial intake form.</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3>Data Room Delivery</h3>
+              <p>Provide controlled access to technical, legal, and financial documentation.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="subscribe" id="subscribe">
+        <header class="section-head section-head-light">
+          <p class="eyebrow">Beehiiv Integration</p>
+          <h2>Production-Ready Capture Layer</h2>
+          <p>
+            This section is wired for Beehiiv embed plus safe fallback. Configure values in
+            <code>app.js</code>.
+          </p>
+        </header>
+
+        <div class="subscribe-grid">
+          <article class="panel">
+            <h3>Primary: Embedded Beehiiv Form</h3>
+            <p id="embedStatus" class="status">Awaiting Beehiiv iframe configuration.</p>
+            <div id="beehiivEmbedContainer" class="embed-shell"></div>
+            <a id="fallbackSubscribe" class="btn btn-gold btn-block" href="#" target="_blank" rel="noopener">
+              Open Beehiiv Subscribe Page
+            </a>
+          </article>
+
+          <article class="panel">
+            <h3>Secondary: NDA + Data Room Request</h3>
+            <p>
+              Keep qualification outside the newsletter stack. Link your preferred form platform
+              (Typeform, Tally, HubSpot, etc.).
+            </p>
+            <a id="ndaLink" class="btn btn-ghost btn-block" href="#" target="_blank" rel="noopener">
+              Request NDA and Data Room Access
+            </a>
+            <p class="small-note">
+              Direct contact: <a id="contactEmail" href="mailto:bni.imoveis@hotmail.com">bni.imoveis@hotmail.com</a>
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Capitania Resort Investor Landing <span id="currentYear"></span></p>
+      <p>Built for external hosting + Beehiiv growth flow.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
