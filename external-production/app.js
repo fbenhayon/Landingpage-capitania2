@@ -1,6 +1,6 @@
 // Production config for external landing + Beehiiv integration.
 // beehiivIframeSrc confirmed from Beehiiv embed code.
-// publicationUrl: update if your Beehiiv subdomain differs from 'capitania'.
+// publicationUrl: update if your Beehiiv subdomain differs from "capitania".
 // ndaFormUrl: internal NDA intake page for Data Room requests.
 const CONFIG = {
   publicationUrl: "https://capitania.beehiiv.com",
@@ -34,6 +34,10 @@ function initBeehiivBlock() {
   const fallbackLink = document.getElementById("fallbackSubscribe");
   const embedContainer = document.getElementById("beehiivEmbedContainer");
   const embedStatus = document.getElementById("embedStatus");
+
+  if (!fallbackLink || !embedContainer || !embedStatus) {
+    return;
+  }
 
   const publicationBase = normalizeBaseUrl(CONFIG.publicationUrl);
   if (looksConfigured(publicationBase)) {
@@ -75,6 +79,10 @@ function initSecondaryActions() {
   const ndaLink = document.getElementById("ndaLink");
   const contactEmail = document.getElementById("contactEmail");
 
+  if (!ndaLink || !contactEmail) {
+    return;
+  }
+
   if (looksConfigured(CONFIG.ndaFormUrl) && !CONFIG.ndaFormUrl.startsWith("mailto:")) {
     ndaLink.href = CONFIG.ndaFormUrl;
   } else {
@@ -88,7 +96,9 @@ function initSecondaryActions() {
 
 function initFooterYear() {
   const yearEl = document.getElementById("currentYear");
-  yearEl.textContent = new Date().getFullYear();
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 }
 
 function init() {
@@ -97,4 +107,8 @@ function init() {
   initFooterYear();
 }
 
-init();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}

@@ -62,6 +62,10 @@ function initNdaRequestForm() {
   const copyButton = document.getElementById("copyRequest");
   const statusEl = document.getElementById("formStatus");
 
+  if (!form || !copyButton || !statusEl) {
+    return;
+  }
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -85,4 +89,8 @@ function initNdaRequestForm() {
   });
 }
 
-initNdaRequestForm();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initNdaRequestForm);
+} else {
+  initNdaRequestForm();
+}

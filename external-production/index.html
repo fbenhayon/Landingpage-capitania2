@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="bg-noise" aria-hidden="true"></div>
@@ -34,8 +34,8 @@
             <span>Structured Upside</span>
           </h1>
           <p class="lead">
-            External production page designed for investor qualification and Beehiiv list growth,
-            without platform limitations from newsletter HTML blocks.
+            Subscribe through the Beehiiv form below to receive the welcome email with the full
+            investment composite and next-step materials.
           </p>
           <div class="hero-actions">
             <a href="#subscribe" class="btn btn-gold">Get Confidential Updates</a>
@@ -58,7 +58,7 @@
         </div>
 
         <figure class="hero-visual">
-          <img src="./assets/capa.jpg" alt="Capitania Resort main view" loading="eager" />
+          <img src="./assets/images/capa.jpg" alt="Capitania Resort main view" loading="eager" />
         </figure>
       </section>
 
@@ -107,21 +107,21 @@
             <span>01</span>
             <div>
               <h3>Subscribe via Beehiiv</h3>
-              <p>Capture investor lead with source attribution and segmentation.</p>
+              <p>Capture the lead and trigger the Beehiiv welcome email workflow.</p>
             </div>
           </li>
           <li>
             <span>02</span>
             <div>
-              <h3>NDA Request</h3>
-              <p>Route qualified contacts to your legal/commercial intake form.</p>
+              <h3>Welcome Email Delivery</h3>
+              <p>Send the investor the email that contains the composite link and onboarding context.</p>
             </div>
           </li>
           <li>
             <span>03</span>
             <div>
-              <h3>Data Room Delivery</h3>
-              <p>Provide controlled access to technical, legal, and financial documentation.</p>
+              <h3>NDA and Data Room</h3>
+              <p>Use the secondary form only for qualified follow-up and controlled disclosure.</p>
             </div>
           </li>
         </ol>
@@ -132,8 +132,8 @@
           <p class="eyebrow">Beehiiv Integration</p>
           <h2>Production-Ready Capture Layer</h2>
           <p>
-            This section is wired for Beehiiv embed plus safe fallback. Configure values in
-            <code>app.js</code>.
+            This form captures the subscriber in Beehiiv. After submission, Beehiiv should redirect
+            to <code>welcome.html</code> and send the configured welcome email with the composite link.
           </p>
         </header>
 
@@ -145,6 +145,10 @@
             <a id="fallbackSubscribe" class="btn btn-gold btn-block" href="#" target="_blank" rel="noopener">
               Open Beehiiv Subscribe Page
             </a>
+            <p class="small-note">
+              Expected flow: submit form, land on <a href="./welcome.html">welcome.html</a>, then
+              receive the Beehiiv welcome email with the full investment composite.
+            </p>
           </article>
 
           <article class="panel">

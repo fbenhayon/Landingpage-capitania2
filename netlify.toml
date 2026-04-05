@@ -1,0 +1,12 @@
+[build]
+  publish = "external-production"
+
+[[redirects]]
+  from = "/welcome"
+  to = "/welcome.html"
+  status = 200
+
+[[redirects]]
+  from = "/nda-request"
+  to = "/nda-request.html"
+  status = 200
