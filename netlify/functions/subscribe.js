@@ -73,7 +73,7 @@ exports.handler = async (event) => {
   if (!apiKey || !publicationId) {
     return jsonResponse(500, {
       error:
-        "Beehiiv integration is not configured in Netlify yet. Add BEEHIIV_API_KEY and BEEHIIV_PUBLICATION_ID.",
+        "BNI subscription integration is not configured in Netlify yet. Add the required environment variables.",
     });
   }
 
@@ -179,7 +179,7 @@ exports.handler = async (event) => {
       const message =
         createBody.error ||
         createBody.message ||
-        "Beehiiv rejected the subscription request.";
+        "BNI rejected the subscription request.";
       return jsonResponse(createResponse.status, { error: message });
     }
 
@@ -193,7 +193,7 @@ exports.handler = async (event) => {
   } catch (error) {
     console.error("Beehiiv create subscription failed", error);
     return jsonResponse(500, {
-      error: "Unable to reach Beehiiv right now. Please try again.",
+      error: "Unable to reach the BNI subscription service right now. Please try again.",
     });
   }
 };

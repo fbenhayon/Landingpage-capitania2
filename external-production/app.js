@@ -1,5 +1,5 @@
 // Production config for the external investor landing.
-// The browser submits to a Netlify Function, which talks to Beehiiv securely.
+// The browser submits to a Netlify Function, which handles the subscription securely.
 const CONFIG = {
   subscribeEndpoint: "/.netlify/functions/subscribe",
   welcomeUrl: "./welcome.html",
@@ -175,7 +175,7 @@ function showSuccessState(result) {
   if (successCopy) {
     successCopy.textContent =
       result && result.existing
-        ? "This email was already present in the investor audience. We are taking you to the welcome page now."
+        ? "This email was already present in the BNI investor audience. We are taking you to the welcome page now."
         : "Your subscription was received successfully. We are taking you to the welcome page now.";
   }
 
