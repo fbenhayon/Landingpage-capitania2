@@ -1,52 +1,15 @@
-// Production config for external landing + Beehiiv integration.
-// The browser never talks directly to the Beehiiv API.
-// Netlify Function /.netlify/functions/subscribe handles the secure API call.
+// Production config for the external investor landing.
+// The browser submits to a Netlify Function, which talks to Beehiiv securely.
 const CONFIG = {
-  publicationUrl: "https://capitania.beehiiv.com",
   subscribeEndpoint: "/.netlify/functions/subscribe",
   welcomeUrl: "./welcome.html",
-  ndaFormUrl: "./nda-request.html",
   contactEmail: "bni.imoveis@hotmail.com",
 };
 
-function looksConfigured(value) {
-  return Boolean(value && !value.includes("SEU-") && !value.includes("SEU_"));
-}
-
-function normalizeBaseUrl(url) {
-  return String(url || "").replace(/\/+$/, "");
-}
-
-function initFallbackLink() {
-  const fallbackLink = document.getElementById("fallbackSubscribe");
-
-  if (!fallbackLink) {
-    return;
-  }
-
-  const publicationBase = normalizeBaseUrl(CONFIG.publicationUrl);
-  if (looksConfigured(publicationBase)) {
-    fallbackLink.href = publicationBase + "/subscribe";
-  } else {
-    fallbackLink.href = "#";
-    fallbackLink.setAttribute("aria-disabled", "true");
-    fallbackLink.style.opacity = "0.7";
-  }
-}
-
-function initSecondaryActions() {
-  const ndaLink = document.getElementById("ndaLink");
+function initContactEmail() {
   const contactEmail = document.getElementById("contactEmail");
-
-  if (!ndaLink || !contactEmail) {
+  if (!contactEmail) {
     return;
-  }
-
-  if (looksConfigured(CONFIG.ndaFormUrl) && !CONFIG.ndaFormUrl.startsWith("mailto:")) {
-    ndaLink.href = CONFIG.ndaFormUrl;
-  } else {
-    ndaLink.href = "mailto:" + CONFIG.contactEmail;
-    ndaLink.textContent = "Request NDA via Email";
   }
 
   contactEmail.href = "mailto:" + CONFIG.contactEmail;
@@ -92,7 +55,7 @@ function setSubmitting(isSubmitting) {
   spinner.style.display = isSubmitting ? "block" : "none";
   buttonText.textContent = isSubmitting
     ? "Submitting..."
-    : "Subscribe · Receive Composite →";
+    : "Subscribe - Receive Composite ->";
 }
 
 function getFieldValue(id) {
@@ -210,16 +173,17 @@ function showSuccessState(result) {
   }
 
   if (successCopy) {
-    successCopy.textContent = result && result.existing
-      ? "This email was already present in the investor audience. We are taking you to the welcome page now."
-      : "Your subscription was received successfully. We are taking you to the welcome page now while Beehiiv processes the welcome email with the composite link.";
+    successCopy.textContent =
+      result && result.existing
+        ? "This email was already present in the investor audience. We are taking you to the welcome page now."
+        : "Your subscription was received successfully. We are taking you to the welcome page now.";
   }
 
   successBox.style.display = "block";
 
   window.setTimeout(() => {
     window.location.href = CONFIG.welcomeUrl;
-  }, 1400);
+  }, 1200);
 }
 
 async function handleSubscriptionSubmit(event) {
@@ -247,7 +211,7 @@ async function handleSubscriptionSubmit(event) {
     showAlert(
       "error",
       error.message ||
-        "We could not process the subscription right now. Please use the Beehiiv fallback link below."
+        "We could not process the subscription right now. Please try again in a moment."
     );
   } finally {
     setSubmitting(false);
@@ -271,8 +235,7 @@ function initFooterYear() {
 }
 
 function init() {
-  initFallbackLink();
-  initSecondaryActions();
+  initContactEmail();
   initSubscriptionForm();
   initFooterYear();
 }
