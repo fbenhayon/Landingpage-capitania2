@@ -1,6 +1,9 @@
 [build]
   publish = "external-production"
 
+[functions]
+  directory = "netlify/functions"
+
 [[redirects]]
   from = "/welcome"
   to = "/welcome.html"
